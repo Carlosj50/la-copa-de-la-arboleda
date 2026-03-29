@@ -54,7 +54,8 @@ Repositorio con build jugable, corpus documental coherente y cierre funcional su
 - manual breve de jugador en raiz para orientar la experiencia sin invadir la interfaz
 - guardado y carga en JSON
 - finales principal y variante
-- 44 pruebas automatizadas base y de regresion
+- 46 pruebas automatizadas base y de regresion
+- build reproducible de `LaCopaDeLaArboleda.exe` para Windows con PyInstaller
 
 ## Pendiente
 
@@ -63,6 +64,7 @@ Repositorio con build jugable, corpus documental coherente y cierre funcional su
 - pasada manual de ritmo y justicia de puzles
 - validacion mas estricta de aliases globales si el contenido crece
 - decidir si se quiere una herramienta auxiliar de autoria mas adelante
+- decidir si en una futura release se quiere adjuntar el `.exe` como asset descargable
 
 ## Riesgos residuales
 

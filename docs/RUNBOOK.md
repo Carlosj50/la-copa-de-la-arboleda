@@ -51,6 +51,12 @@ python -m pip install --upgrade pip
 python -m pip install -e .
 ```
 
+Si se quiere generar un ejecutable de Windows, la dependencia de build aprobada es PyInstaller:
+
+```bash
+python -m pip install -e .[build]
+```
+
 ## Ejecutar el proyecto
 
 Comando:
@@ -78,6 +84,25 @@ set LA_COPA_VISUAL=0
 set LA_COPA_COMPACT=1
 python -m game
 ```
+
+## Generar ejecutable de Windows
+
+Comando recomendado desde la raiz del proyecto:
+
+```bat
+GENERAR_EXE.bat
+```
+
+Resultado esperado:
+
+- `dist\LaCopaDeLaArboleda.exe`
+
+Notas operativas:
+
+- el ejecutable se genera con PyInstaller en modo `onefile`
+- los datos de `data/world` quedan embebidos en el binario
+- los saves se crean junto al ejecutable en `data\saves\`
+- el script de build limpia el build anterior antes de regenerar el binario
 
 ## Ejecutar pruebas
 

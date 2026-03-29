@@ -9,9 +9,9 @@ __pycache__/
 .Python
 build/
 dist/
+*.spec
 *.egg-info/
 data/saves/*.json
 Thumbs.db
 Desktop.ini
 ehthumbs.db
-

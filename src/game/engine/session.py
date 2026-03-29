@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 from copy import deepcopy
-from pathlib import Path
 from typing import Iterable
 
 from game.content import load_game_definition
@@ -21,6 +20,7 @@ from game.model import (
 from game.parser import parse_command
 from game.persistence import SaveSystem
 from game.shared.pixel_art import render_scene
+from game.shared.runtime import RuntimePaths
 from game.shared.screen import ScreenComposer, ScreenOptions
 from game.shared.text import format_series, normalize_text, wrap_for_screen
 
@@ -54,9 +54,21 @@ class GameSession:
         self._screen_notice: str | None = None
 
     @classmethod
-    def from_project_root(cls, project_root: Path) -> "GameSession":
-        definition = load_game_definition(project_root / "data" / "world")
-        save_system = SaveSystem(project_root / "data" / "saves" / DEFAULT_SAVE_NAME)
+    def from_runtime_paths(cls, runtime_paths: RuntimePaths) -> "GameSession":
+        definition = load_game_definition(runtime_paths.world_dir)
+        save_system = SaveSystem(runtime_paths.save_dir / DEFAULT_SAVE_NAME)
+        return cls(definition, save_system)
+
+    @classmethod
+    def from_project_root(cls, project_root) -> "GameSession":
+        runtime_paths = RuntimePaths(
+            bundle_root=project_root,
+            app_root=project_root,
+            world_dir=project_root / "data" / "world",
+            save_dir=project_root / "data" / "saves",
+        )
+        definition = load_game_definition(runtime_paths.world_dir)
+        save_system = SaveSystem(runtime_paths.save_dir / DEFAULT_SAVE_NAME)
         return cls(definition, save_system)
 
     def _build_initial_state(self) -> GameState:

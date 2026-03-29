@@ -6,10 +6,10 @@ import os
 import shutil
 import sys
 import time
-from pathlib import Path
 
 from game.engine import GameSession
 from game.shared.pixel_art import enable_console_ansi
+from game.shared.runtime import resolve_runtime_paths
 from game.shared.screen import center_block, horizontal_margin
 
 
@@ -67,8 +67,8 @@ def main() -> int:
         sys.stdout.reconfigure(encoding="utf-8")
     if hasattr(sys.stderr, "reconfigure"):
         sys.stderr.reconfigure(encoding="utf-8")
-    project_root = Path(__file__).resolve().parents[2]
-    session = GameSession.from_project_root(project_root)
+    runtime_paths = resolve_runtime_paths()
+    session = GameSession.from_runtime_paths(runtime_paths)
     startup_size = wait_for_terminal_layout(session.screen.options.frame_width, minimum_height=32)
     clear_screen()
     print_centered_screen(

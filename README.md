@@ -31,6 +31,16 @@ Tras la muerte de un familiar solitario, el protagonista recibe una carpeta con 
 
 Lo que empieza como la búsqueda de una copa de plata acaba convirtiéndose en una exploración de la finca de La Arboleda, sus anexos olvidados y una zona subterránea sellada durante décadas.
 
+## Ficha rápida
+
+- 24 pantallas / habitaciones
+- 4 zonas conectadas
+- 9 hitos principales de progreso
+- 14 objetos principales de interacción
+- 4 hallazgos opcionales con peso real
+- 15 elementos fijos interactivos del entorno
+- 1 final principal con variante
+
 ## Qué ofrece el proyecto
 
 - aventura conversacional original con tono de misterio, melancolía y tensión suave
@@ -92,12 +102,30 @@ También puedes usar el lanzador:
 
 - `JUGAR_LA_COPA.bat`
 
+Generar un ejecutable de Windows:
+
+```powershell
+python -m pip install -e .[build]
+.\GENERAR_EXE.bat
+```
+
+Salida esperada:
+
+- `dist\LaCopaDeLaArboleda.exe`
+
 ### WSL
 
 ```bash
 cmd.exe /c py -3.12 -m venv G:\\juegopcaventuraconversacional\\.venv
 /mnt/g/juegopcaventuraconversacional/.venv/Scripts/python.exe -m pip install -e /mnt/g/juegopcaventuraconversacional
 /mnt/g/juegopcaventuraconversacional/.venv/Scripts/python.exe -m game
+```
+
+Generar el `.exe` de Windows desde WSL:
+
+```bash
+/mnt/g/juegopcaventuraconversacional/.venv/Scripts/python.exe -m pip install -e /mnt/g/juegopcaventuraconversacional[build]
+cmd.exe /c G:\\juegopcaventuraconversacional\\GENERAR_EXE.bat
 ```
 
 ## Comandos útiles
@@ -135,6 +163,13 @@ Regenerar capturas del README:
 python scripts/generate_readme_assets.py
 ```
 
+Generar el ejecutable de Windows:
+
+```powershell
+python -m pip install -e .[build]
+.\GENERAR_EXE.bat
+```
+
 ## Estructura
 
 ```text
@@ -158,6 +193,7 @@ python scripts/generate_readme_assets.py
 
 - Python simple antes que complejidad gratuita
 - biblioteca estándar primero
+- dependencia externa de build solo cuando aporta una salida clara, como el `.exe` de Windows
 - contenido separado del motor
 - cambios pequeños y trazables
 - arquitectura mantenible antes que "brillante"
