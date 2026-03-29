@@ -1,0 +1,31 @@
+{
+  "title": "La Copa de la Arboleda",
+  "data_version": 1,
+  "intro_scene": "intro_carpeta",
+  "start_room": "camino_entrada",
+  "intro": [
+    "La carpeta que te dejaron tras la muerte de Salvador Llorente pesa menos de lo que esperabas. Dentro solo hay notas a medias, un croquis torpe y una frase repetida hasta la obsesión: \"No la busques en la casa. La copa guarda el camino.\"",
+    "La Arboleda aparece por fin entre los árboles como si hubiera pasado años esperando una visita que ya no creía posible."
+  ],
+  "initial_flags": {
+    "broken_fence_crossable": false,
+    "front_shortcut_open": false,
+    "tool_room_open": false,
+    "lamp_filled": false,
+    "lamp_lit": false,
+    "pantry_hint_found": false,
+    "portrait_clue_found": false,
+    "library_history_found": false,
+    "bedroom_letter_found": false,
+    "medallion_found": false,
+    "chapel_window_repaired": false,
+    "chapel_mechanism_solved": false,
+    "cup_revealed": false,
+    "sacristy_open": false,
+    "cellar_slab_open": false,
+    "aljibe_crossed": false,
+    "cup_filled": false,
+    "grotto_open": false,
+    "final_archive_open": false
+  }
+}

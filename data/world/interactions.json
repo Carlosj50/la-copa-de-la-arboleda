@@ -1,0 +1,591 @@
+[
+  {
+    "id": "usar_tabla_en_zanja",
+    "action": "USAR",
+    "room_id": "valla_rota",
+    "direct_object": "tabla_suelta",
+    "indirect_object": "zanja_barro",
+    "conditions": [
+      {
+        "type": "inventory_contains",
+        "object_id": "tabla_suelta"
+      },
+      {
+        "type": "flag_false",
+        "name": "broken_fence_crossable"
+      }
+    ],
+    "effects": [
+      {
+        "type": "set_flag",
+        "name": "broken_fence_crossable",
+        "value": true
+      },
+      {
+        "type": "move_object",
+        "object_id": "tabla_suelta",
+        "location": "valla_rota"
+      },
+      {
+        "type": "set_object_state",
+        "object_id": "tabla_suelta",
+        "state": "fixed",
+        "value": true
+      }
+    ],
+    "success_text": "Apoyas la tabla sobre la zanja y, aunque no inspira confianza, queda bastante firme para pasar sin jugarte una torpeza.",
+    "failure_text": "La tabla ya cumple aquí la unica tarea sensata que podía tener."
+  },
+  {
+    "id": "usar_llave_en_puerta_aperos",
+    "action": "USAR",
+    "room_id": "patio_exterior",
+    "direct_object": "llave_oxidada",
+    "indirect_object": "puerta_aperos",
+    "conditions": [
+      {
+        "type": "inventory_contains",
+        "object_id": "llave_oxidada"
+      },
+      {
+        "type": "flag_false",
+        "name": "tool_room_open"
+      }
+    ],
+    "effects": [
+      {
+        "type": "set_flag",
+        "name": "tool_room_open",
+        "value": true
+      }
+    ],
+    "success_text": "La llave se resiste un instante y luego cede. La puerta de aperos queda abierta.",
+    "failure_text": "La puerta ya está abierta."
+  },
+  {
+    "id": "abrir_puerta_aperos",
+    "action": "ABRIR",
+    "room_id": "patio_exterior",
+    "direct_object": "puerta_aperos",
+    "conditions": [
+      {
+        "type": "inventory_contains",
+        "object_id": "llave_oxidada"
+      },
+      {
+        "type": "flag_false",
+        "name": "tool_room_open"
+      }
+    ],
+    "effects": [
+      {
+        "type": "set_flag",
+        "name": "tool_room_open",
+        "value": true
+      }
+    ],
+    "success_text": "La cerradura responde al fin y la puerta lateral se abre hacia el cuarto de aperos.",
+    "failure_text": "Sin la llave adecuada no la abres."
+  },
+  {
+    "id": "abrir_falso_fondo",
+    "action": "ABRIR",
+    "room_id": "despensa",
+    "direct_object": "falso_fondo",
+    "conditions": [
+      {
+        "type": "object_state_is",
+        "object_id": "nota_encerada",
+        "state": "visible",
+        "value": false
+      }
+    ],
+    "effects": [
+      {
+        "type": "reveal_object",
+        "object_id": "nota_encerada"
+      }
+    ],
+    "success_text": "El falso fondo cede y deja ver una nota protegida con cera.",
+    "failure_text": "Ya has sacado lo que escondia."
+  },
+  {
+    "id": "empujar_falso_fondo",
+    "action": "EMPUJAR",
+    "room_id": "despensa",
+    "direct_object": "falso_fondo",
+    "conditions": [
+      {
+        "type": "object_state_is",
+        "object_id": "nota_encerada",
+        "state": "visible",
+        "value": false
+      }
+    ],
+    "effects": [
+      {
+        "type": "reveal_object",
+        "object_id": "nota_encerada"
+      }
+    ],
+    "success_text": "Al empujar el fondo falso, una nota encerada asoma desde el hueco.",
+    "failure_text": "No queda nada más oculto ahí."
+  },
+  {
+    "id": "usar_aceite_en_lampara",
+    "action": "USAR",
+    "direct_object": "botella_aceite",
+    "indirect_object": "lampara_aceite",
+    "conditions": [
+      {
+        "type": "inventory_contains",
+        "object_id": "botella_aceite"
+      },
+      {
+        "type": "inventory_contains",
+        "object_id": "lampara_aceite"
+      },
+      {
+        "type": "object_state_is",
+        "object_id": "lampara_aceite",
+        "state": "filled",
+        "value": false
+      }
+    ],
+    "effects": [
+      {
+        "type": "set_object_state",
+        "object_id": "lampara_aceite",
+        "state": "filled",
+        "value": true
+      },
+      {
+        "type": "set_flag",
+        "name": "lamp_filled",
+        "value": true
+      }
+    ],
+    "success_text": "Rellenas la lámpara con cuidado. Ahora ya no está seca.",
+    "failure_text": "La lámpara ya tiene aceite suficiente."
+  },
+  {
+    "id": "usar_pala_en_bancal",
+    "action": "USAR",
+    "room_id": "invernadero_abandonado",
+    "direct_object": "pala_pequena",
+    "indirect_object": "bancal_frio",
+    "conditions": [
+      {
+        "type": "inventory_contains",
+        "object_id": "pala_pequena"
+      },
+      {
+        "type": "object_state_is",
+        "object_id": "medallon_simbolo",
+        "state": "visible",
+        "value": false
+      }
+    ],
+    "effects": [
+      {
+        "type": "reveal_object",
+        "object_id": "medallon_simbolo"
+      },
+      {
+        "type": "set_flag",
+        "name": "medallion_found",
+        "value": true
+      }
+    ],
+    "success_text": "La pala encuentra metal enseguida. Bajo poca tierra aparece un medallon envuelto en trapo viejo.",
+    "failure_text": "Ese bancal ya no guarda nada."
+  },
+  {
+    "id": "usar_vidriera_en_roseton",
+    "action": "USAR",
+    "room_id": "capilla_ruinas",
+    "direct_object": "trozo_vidriera",
+    "indirect_object": "roseton_capilla",
+    "conditions": [
+      {
+        "type": "inventory_contains",
+        "object_id": "trozo_vidriera"
+      },
+      {
+        "type": "flag_false",
+        "name": "chapel_window_repaired"
+      }
+    ],
+    "effects": [
+      {
+        "type": "set_flag",
+        "name": "chapel_window_repaired",
+        "value": true
+      },
+      {
+        "type": "move_object",
+        "object_id": "trozo_vidriera",
+        "location": "capilla_ruinas"
+      },
+      {
+        "type": "set_object_state",
+        "object_id": "trozo_vidriera",
+        "state": "fixed",
+        "value": true
+      }
+    ],
+    "success_text": "Encajas el trozo en el rosetón. La luz deja de romperse al azar y el dibujo recupera un sentido antiguo.",
+    "failure_text": "El rosetón ya no parece incompleto."
+  },
+  {
+    "id": "usar_medallon_en_altar",
+    "action": "USAR",
+    "room_id": "capilla_ruinas",
+    "direct_object": "medallon_simbolo",
+    "indirect_object": "altar_capilla",
+    "conditions": [
+      {
+        "type": "inventory_contains",
+        "object_id": "medallon_simbolo"
+      },
+      {
+        "type": "flag_true",
+        "name": "chapel_window_repaired"
+      },
+      {
+        "type": "flag_false",
+        "name": "chapel_mechanism_solved"
+      }
+    ],
+    "effects": [
+      {
+        "type": "set_flag",
+        "name": "chapel_mechanism_solved",
+        "value": true
+      },
+      {
+        "type": "set_flag",
+        "name": "sacristy_open",
+        "value": true
+      },
+      {
+        "type": "set_flag",
+        "name": "cup_revealed",
+        "value": true
+      },
+      {
+        "type": "reveal_object",
+        "object_id": "copa_plata"
+      }
+    ],
+    "success_text": "El medallón gira dentro del relieve. Algo cede tras el altar y, con un ruido seco, queda al descubierto una copa de plata. A la vez, la puerta de la sacristía se destraba.",
+    "failure_text": "El altar no responde. Falta algo en la luz del rosetón."
+  },
+  {
+    "id": "usar_vara_en_losa",
+    "action": "USAR",
+    "room_id": "sacristia",
+    "direct_object": "vara_metalica",
+    "indirect_object": "losa_subterraneo",
+    "conditions": [
+      {
+        "type": "inventory_contains",
+        "object_id": "vara_metalica"
+      },
+      {
+        "type": "flag_false",
+        "name": "cellar_slab_open"
+      }
+    ],
+    "effects": [
+      {
+        "type": "set_flag",
+        "name": "cellar_slab_open",
+        "value": true
+      }
+    ],
+    "success_text": "Usas la vara como palanca. La losa se alza lo justo para dejar libre la bajada.",
+    "failure_text": "La losa ya está abierta."
+  },
+  {
+    "id": "abrir_losa",
+    "action": "ABRIR",
+    "room_id": "sacristia",
+    "direct_object": "losa_subterraneo",
+    "conditions": [
+      {
+        "type": "inventory_contains",
+        "object_id": "vara_metalica"
+      },
+      {
+        "type": "flag_false",
+        "name": "cellar_slab_open"
+      }
+    ],
+    "effects": [
+      {
+        "type": "set_flag",
+        "name": "cellar_slab_open",
+        "value": true
+      }
+    ],
+    "success_text": "Haces palanca con la vara y la losa acaba cediendo.",
+    "failure_text": "A mano limpia no la mueves."
+  },
+  {
+    "id": "usar_gancho_en_anillas",
+    "action": "USAR",
+    "room_id": "camara_aljibe",
+    "direct_object": "gancho_hierro",
+    "indirect_object": "anillas_aljibe",
+    "conditions": [
+      {
+        "type": "inventory_contains",
+        "object_id": "gancho_hierro"
+      },
+      {
+        "type": "inventory_contains",
+        "object_id": "cuerda"
+      },
+      {
+        "type": "flag_true",
+        "name": "lamp_lit"
+      },
+      {
+        "type": "flag_false",
+        "name": "aljibe_crossed"
+      }
+    ],
+    "effects": [
+      {
+        "type": "set_flag",
+        "name": "aljibe_crossed",
+        "value": true
+      }
+    ],
+    "success_text": "Aseguras la cuerda con ayuda del gancho y de las anillas enfrentadas. El paso deja de ser una apuesta y pasa a ser un riesgo calculado.",
+    "failure_text": "Sin cuerda y luz suficiente solo conseguirías perder el equilibrio."
+  },
+  {
+    "id": "usar_cuerda_en_anillas",
+    "action": "USAR",
+    "room_id": "camara_aljibe",
+    "direct_object": "cuerda",
+    "indirect_object": "anillas_aljibe",
+    "conditions": [
+      {
+        "type": "inventory_contains",
+        "object_id": "gancho_hierro"
+      },
+      {
+        "type": "inventory_contains",
+        "object_id": "cuerda"
+      },
+      {
+        "type": "flag_true",
+        "name": "lamp_lit"
+      },
+      {
+        "type": "flag_false",
+        "name": "aljibe_crossed"
+      }
+    ],
+    "effects": [
+      {
+        "type": "set_flag",
+        "name": "aljibe_crossed",
+        "value": true
+      }
+    ],
+    "success_text": "Con la cuerda y el gancho terminas montando un paso seguro entre las anillas.",
+    "failure_text": "Así, sin sujetarla bien, la cuerda no basta."
+  },
+  {
+    "id": "usar_copa_en_agua",
+    "action": "USAR",
+    "room_id": "camara_aljibe",
+    "direct_object": "copa_plata",
+    "indirect_object": "agua_aljibe",
+    "conditions": [
+      {
+        "type": "inventory_contains",
+        "object_id": "copa_plata"
+      },
+      {
+        "type": "flag_false",
+        "name": "cup_filled"
+      }
+    ],
+    "effects": [
+      {
+        "type": "set_flag",
+        "name": "cup_filled",
+        "value": true
+      },
+      {
+        "type": "set_object_state",
+        "object_id": "copa_plata",
+        "state": "filled",
+        "value": true
+      }
+    ],
+    "success_text": "Llenas la copa con agua del aljibe. El metal parece reclamar justo esta medida y no otra.",
+    "failure_text": "La copa ya contiene agua."
+  },
+  {
+    "id": "usar_placa_en_hendidura",
+    "action": "USAR",
+    "room_id": "gruta_sellada",
+    "direct_object": "placa_piedra",
+    "indirect_object": "hendidura_piedra",
+    "conditions": [
+      {
+        "type": "inventory_contains",
+        "object_id": "placa_piedra"
+      },
+      {
+        "type": "object_state_is",
+        "object_id": "placa_piedra",
+        "state": "inserted",
+        "value": false
+      }
+    ],
+    "effects": [
+      {
+        "type": "set_object_state",
+        "object_id": "placa_piedra",
+        "state": "inserted",
+        "value": true
+      }
+    ],
+    "success_text": "La placa entra en la hendidura con un encaje exacto. Algo interno termina de alinearse.",
+    "failure_text": "La placa ya está en su sitio."
+  },
+  {
+    "id": "usar_copa_en_cuenco",
+    "action": "USAR",
+    "room_id": "gruta_sellada",
+    "direct_object": "copa_plata",
+    "indirect_object": "cuenco_piedra",
+    "conditions": [
+      {
+        "type": "inventory_contains",
+        "object_id": "copa_plata"
+      },
+      {
+        "type": "flag_true",
+        "name": "cup_filled"
+      },
+      {
+        "type": "object_state_is",
+        "object_id": "placa_piedra",
+        "state": "inserted",
+        "value": true
+      },
+      {
+        "type": "flag_false",
+        "name": "grotto_open"
+      }
+    ],
+    "effects": [
+      {
+        "type": "set_flag",
+        "name": "grotto_open",
+        "value": true
+      },
+      {
+        "type": "set_flag",
+        "name": "cup_filled",
+        "value": false
+      },
+      {
+        "type": "set_object_state",
+        "object_id": "copa_plata",
+        "state": "filled",
+        "value": false
+      }
+    ],
+    "success_text": "Viertes el agua en el cuenco. La roca responde con un temblor breve y la gruta deja libre el paso a la cámara final.",
+    "failure_text": "El gesto sigue incompleto. Algo aún falta."
+  },
+  {
+    "id": "abrir_cajon_oculto",
+    "action": "ABRIR",
+    "room_id": "dormitorio_familiar",
+    "direct_object": "cajon_oculto",
+    "conditions": [
+      {
+        "type": "inventory_contains",
+        "object_id": "vara_metalica"
+      },
+      {
+        "type": "object_state_is",
+        "object_id": "carta_salvador",
+        "state": "visible",
+        "value": false
+      }
+    ],
+    "effects": [
+      {
+        "type": "reveal_object",
+        "object_id": "carta_salvador"
+      }
+    ],
+    "success_text": "Haciendo algo de palanca logras abrir el cajón. Dentro queda escondida una carta doblada con cuidado.",
+    "failure_text": "El cajón ya no oculta nada más."
+  },
+  {
+    "id": "usar_vara_en_cajon",
+    "action": "USAR",
+    "room_id": "dormitorio_familiar",
+    "direct_object": "vara_metalica",
+    "indirect_object": "cajon_oculto",
+    "conditions": [
+      {
+        "type": "inventory_contains",
+        "object_id": "vara_metalica"
+      },
+      {
+        "type": "object_state_is",
+        "object_id": "carta_salvador",
+        "state": "visible",
+        "value": false
+      }
+    ],
+    "effects": [
+      {
+        "type": "reveal_object",
+        "object_id": "carta_salvador"
+      }
+    ],
+    "success_text": "La vara entra justo donde el cajón se quedaba trabado. Un tiron breve basta para revelar una carta oculta.",
+    "failure_text": "El cajón ya no guarda nada más."
+  },
+  {
+    "id": "usar_copa_en_pedestal",
+    "action": "USAR",
+    "room_id": "camara_final",
+    "direct_object": "copa_plata",
+    "indirect_object": "pedestal_final",
+    "conditions": [
+      {
+        "type": "inventory_contains",
+        "object_id": "copa_plata"
+      },
+      {
+        "type": "flag_false",
+        "name": "final_archive_open"
+      }
+    ],
+    "effects": [
+      {
+        "type": "set_flag",
+        "name": "final_archive_open",
+        "value": true
+      },
+      {
+        "type": "end_game"
+      }
+    ]
+  }
+]

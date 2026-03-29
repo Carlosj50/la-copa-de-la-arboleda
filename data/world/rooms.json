@@ -1,0 +1,748 @@
+[
+  {
+    "id": "camino_entrada",
+    "zone": "zona_1",
+    "name": "Camino de entrada",
+    "aliases": [
+      "camino"
+    ],
+    "scene": "camino_entrada",
+    "first_description": "El sendero de tierra se estrecha entre ramas secas y hierba alta. Bajo las suelas, la grava suena demasiado fuerte para un lugar tan callado. La casa todavía no se ve entera, pero el croquis de Salvador deja de parecer una broma triste. Cada pocos pasos vuelve la frase de las notas, seca y obstinada, como si el lugar quisiera comprobar si de verdad has venido a escuchar.",
+    "repeat_description": "El camino de entrada sigue encerrado entre ramas, grava y una paciencia poco hospitalaria.",
+    "exits": {
+      "ESTE": {
+        "target": "cruce_bosque"
+      }
+    },
+    "objects": [
+      "ramas_secas"
+    ],
+    "tags": [
+      "exterior",
+      "inicio"
+    ]
+  },
+  {
+    "id": "cruce_bosque",
+    "zone": "zona_1",
+    "name": "Cruce del bosque",
+    "aliases": [
+      "cruce",
+      "bosque"
+    ],
+    "scene": "cruce_bosque",
+    "first_description": "Un cruce de senderos apenas mantenidos divide el bosque en dos lecturas distintas. Hacia un lado, piedras viejas y promesa de entrada noble. Hacia otro, un claro más humilde y una sensación de rodeo práctico.",
+    "repeat_description": "El cruce separa el sendero noble del rodeo útil.",
+    "exits": {
+      "OESTE": {
+        "target": "camino_entrada"
+      },
+      "NORTE": {
+        "target": "claro_pozo_seco"
+      },
+      "ESTE": {
+        "target": "sendero_piedras"
+      }
+    },
+    "objects": [],
+    "tags": [
+      "exterior",
+      "nodo"
+    ]
+  },
+  {
+    "id": "claro_pozo_seco",
+    "zone": "zona_1",
+    "name": "Claro con pozo seco",
+    "aliases": [
+      "claro"
+    ],
+    "first_description": "El claro se abre de golpe en medio del arbolado. Un pozo seco, un cubo vencido y una tabla desplazada por la humedad bastan para explicar lo que el tiempo ha hecho aquí mejor que cualquier nota.",
+    "repeat_description": "El pozo seco y la tabla siguen dominando el claro.",
+    "exits": {
+      "SUR": {
+        "target": "cruce_bosque"
+      },
+      "ESTE": {
+        "target": "valla_rota"
+      }
+    },
+    "objects": [
+      "pozo_seco",
+      "cubo_viejo",
+      "tabla_suelta"
+    ],
+    "tags": [
+      "exterior"
+    ]
+  },
+  {
+    "id": "sendero_piedras",
+    "zone": "zona_1",
+    "name": "Sendero de piedras",
+    "aliases": [
+      "sendero",
+      "entrada frontal"
+    ],
+    "scene": "sendero_piedras",
+    "first_description": "Las piedras planas del sendero aún conservan una compostura antigua. Al final espera la verja frontal de La Arboleda, cerrada con una obstinación que no parece reciente. La fachada se adivina detrás, solemne y poco útil, como si esta entrada hubiera quedado reservada para llegar tarde.",
+    "repeat_description": "La verja frontal sigue cerrada y la fachada promete un atajo que todavía no concede.",
+    "exits": {
+      "OESTE": {
+        "target": "cruce_bosque"
+      },
+      "ESTE": {
+        "target": "patio_exterior",
+        "conditions": [
+          {
+            "type": "flag_true",
+            "name": "front_shortcut_open"
+          }
+        ],
+        "failure_text": "La verja sigue cerrada por dentro."
+      }
+    },
+    "objects": [
+      "verja_frontal"
+    ],
+    "tags": [
+      "exterior",
+      "bloqueo"
+    ]
+  },
+  {
+    "id": "valla_rota",
+    "zone": "zona_1",
+    "name": "Valla rota",
+    "aliases": [
+      "valla",
+      "brecha"
+    ],
+    "first_description": "La valla cede justo donde el terreno se ha hundido en una zanja de barro oscuro. No es una entrada elegante, pero si una invitación bastante clara a dejar de pensar como un heredero y empezar a pensar como alguien que quiere pasar.",
+    "repeat_description": "La zanja parte la valla rota y vuelve inútil el paso hasta resolverla.",
+    "exits": {
+      "OESTE": {
+        "target": "claro_pozo_seco"
+      },
+      "ESTE": {
+        "target": "patio_trasero",
+        "conditions": [
+          {
+            "type": "flag_true",
+            "name": "broken_fence_crossable"
+          }
+        ],
+        "failure_text": "La zanja no te deja pasar sin jugártela demasiado."
+      }
+    },
+    "objects": [
+      "zanja_barro"
+    ],
+    "tags": [
+      "exterior",
+      "bloqueo"
+    ]
+  },
+  {
+    "id": "patio_exterior",
+    "zone": "zona_2",
+    "name": "Patio exterior",
+    "aliases": [
+      "patio frontal",
+      "fachada"
+    ],
+    "scene": "patio_exterior",
+    "first_description": "La fachada principal de la finca se levanta apagada y cansada, con la piedra comida por la intemperie y una puerta de aperos lateral que parece haber resistido mejor que la entrada noble. Desde aquí la casa parece menos abandonada que suspendida.",
+    "repeat_description": "La fachada principal y la puerta lateral siguen vigilando el patio exterior.",
+    "exits": {
+      "OESTE": {
+        "target": "sendero_piedras",
+        "conditions": [
+          {
+            "type": "flag_true",
+            "name": "front_shortcut_open"
+          }
+        ],
+        "failure_text": "La verja frontal aún no puede abrirse desde aquí."
+      },
+      "ESTE": {
+        "target": "vestibulo"
+      },
+      "SUR": {
+        "target": "cuarto_aperos",
+        "conditions": [
+          {
+            "type": "flag_true",
+            "name": "tool_room_open"
+          }
+        ],
+        "failure_text": "La puerta lateral de los aperos sigue cerrada."
+      }
+    },
+    "context_actions": {
+      "ENTRAR": "ESTE"
+    },
+    "enter_events": [
+      {
+        "conditions": [
+          {
+            "type": "flag_false",
+            "name": "front_shortcut_open"
+          }
+        ],
+        "effects": [
+          {
+            "type": "set_flag",
+            "name": "front_shortcut_open",
+            "value": true
+          }
+        ],
+        "text": "Al pasar por aquí descorres la tranca interior de la verja frontal. El acceso principal ya no queda sellado."
+      }
+    ],
+    "tags": [
+      "exterior",
+      "hub"
+    ],
+    "objects": [
+      "puerta_aperos"
+    ]
+  },
+  {
+    "id": "vestibulo",
+    "zone": "zona_2",
+    "name": "Vestíbulo",
+    "aliases": [
+      "recibidor"
+    ],
+    "scene": "vestibulo",
+    "first_description": "El vestíbulo conserva una dignidad triste: polvo fino, madera cansada y un retrato dañado que aún domina la pared principal. Aquí dentro la finca deja de ser rumor y empieza a parecer una memoria incómoda.",
+    "repeat_description": "El vestíbulo sigue inmóvil bajo el retrato y el polvo.",
+    "exits": {
+      "OESTE": {
+        "target": "patio_exterior"
+      },
+      "NORTE": {
+        "target": "salon_principal"
+      },
+      "ESTE": {
+        "target": "biblioteca"
+      }
+    },
+    "objects": [
+      "retrato_danado"
+    ],
+    "tags": [
+      "interior"
+    ]
+  },
+  {
+    "id": "salon_principal",
+    "zone": "zona_2",
+    "name": "Salón principal",
+    "aliases": [
+      "salón"
+    ],
+    "first_description": "La sala grande está demasiado quieta incluso para una casa vacía. Un reloj parado y una copa rota bastan para sugerir reuniones antiguas, pero ya no queda nada aquí que quiera hacerse pasar por cálido. La estancia conserva el tono de un lugar hecho para impresionar a otros y luego abandonado cuando ya no quedaba nadie a quien convencer.",
+    "repeat_description": "El salón sigue ancho, frío y lleno de ecos inútiles.",
+    "exits": {
+      "SUR": {
+        "target": "vestibulo"
+      },
+      "ESTE": {
+        "target": "comedor"
+      }
+    },
+    "objects": [
+      "reloj_parado",
+      "copa_rota"
+    ],
+    "tags": [
+      "interior"
+    ],
+    "scene": "salon_principal"
+  },
+  {
+    "id": "comedor",
+    "zone": "zona_2",
+    "name": "Comedor",
+    "aliases": [
+      "mesa"
+    ],
+    "first_description": "Una mesa larga ocupa casi todo el comedor. La cuchara vieja que ha quedado a un lado parece más real que cualquier idea de banquete. Todo aquí habla de costumbre rota, no de tragedia ruidosa. Desde esta sala la casa deja de fingir nobleza y empieza a recordar que también vivió de trabajo, hambre y rutina.",
+    "repeat_description": "El comedor sigue a medio camino entre la ceremonia gastada y la rutina domestica.",
+    "exits": {
+      "OESTE": {
+        "target": "salon_principal"
+      },
+      "SUR": {
+        "target": "cocina"
+      }
+    },
+    "objects": [
+      "cuchara_vieja"
+    ],
+    "tags": [
+      "interior"
+    ],
+    "scene": "comedor"
+  },
+  {
+    "id": "cocina",
+    "zone": "zona_2",
+    "name": "Cocina",
+    "aliases": [
+      "fogon"
+    ],
+    "first_description": "La cocina parece haber sido el último lugar realmente útil de la casa. Hay un cajón roto, una encimera marcada por años de trabajo y restos modestos que sobrevivieron mejor que el orgullo de las salas principales.",
+    "repeat_description": "La cocina sigue siendo el cuarto más práctico de toda la finca.",
+    "exits": {
+      "NORTE": {
+        "target": "comedor"
+      },
+      "ESTE": {
+        "target": "despensa"
+      },
+      "SUR": {
+        "target": "patio_trasero"
+      }
+    },
+    "objects": [
+      "cajon_roto",
+      "caja_cerillas",
+      "llave_oxidada"
+    ],
+    "tags": [
+      "interior",
+      "hub"
+    ],
+    "scene": "cocina"
+  },
+  {
+    "id": "despensa",
+    "zone": "zona_2",
+    "name": "Despensa",
+    "aliases": [
+      "anaqueles"
+    ],
+    "first_description": "La despensa es estrecha y huele a madera húmeda. Los anaqueles estan vencidos y uno de ellos deja ver un falso fondo mal disimulado, como si alguien hubiera querido esconder algo sin fiarse del todo de su propio ingenio.",
+    "repeat_description": "La despensa sigue apretada entre anaqueles y humedad vieja.",
+    "exits": {
+      "OESTE": {
+        "target": "cocina"
+      }
+    },
+    "objects": [
+      "falso_fondo",
+      "nota_encerada"
+    ],
+    "context_actions": {
+      "SALIR": "OESTE"
+    },
+    "tags": [
+      "interior",
+      "opcional"
+    ]
+  },
+  {
+    "id": "biblioteca",
+    "zone": "zona_2",
+    "name": "Biblioteca",
+    "aliases": [
+      "libros"
+    ],
+    "first_description": "La biblioteca se ha reblandecido por la humedad, pero todavía conserva un orden terco. Entre los estantes y la mesa de lectura sobreviven legajos de la finca y un fragmento de vidriera envuelto en tela oscura. No parece un cuarto de estudio brillante, sino un sitio donde insistir en silencio hasta que una nota o un nombre encajen.",
+    "repeat_description": "La biblioteca sigue oliendo a papel mojado, nombres viejos y paciencia.",
+    "exits": {
+      "OESTE": {
+        "target": "vestibulo"
+      },
+      "NORTE": {
+        "target": "dormitorio_familiar"
+      }
+    },
+    "objects": [
+      "libro_humedo",
+      "legajos_finca",
+      "trozo_vidriera"
+    ],
+    "tags": [
+      "interior",
+      "contexto"
+    ],
+    "scene": "biblioteca"
+  },
+  {
+    "id": "dormitorio_familiar",
+    "zone": "zona_2",
+    "name": "Dormitorio del familiar",
+    "aliases": [
+      "dormitorio",
+      "cuarto"
+    ],
+    "first_description": "El dormitorio de Salvador es sobrio y reciente en comparación con el resto de la casa. Aquí hay menos abandono que agotamiento: una lámpara, un cuaderno de notas y un mueble cuyo cajón no termina de encajar. Por primera vez desde que llegaste, la finca parece menos un escenario y más la suma de una vida concreta, cansada y todavía atenta.",
+    "repeat_description": "El dormitorio de Salvador sigue pareciendo habitado por una ausencia cercana y muy poco teatral.",
+    "exits": {
+      "SUR": {
+        "target": "biblioteca"
+      }
+    },
+    "objects": [
+      "lampara_aceite",
+      "cuaderno_familiar",
+      "cajon_oculto",
+      "carta_salvador"
+    ],
+    "context_actions": {
+      "SALIR": "SUR"
+    },
+    "tags": [
+      "interior",
+      "clave"
+    ],
+    "scene": "dormitorio_familiar"
+  },
+  {
+    "id": "cuarto_aperos",
+    "zone": "zona_3",
+    "name": "Cuarto de aperos",
+    "aliases": [
+      "aperos"
+    ],
+    "first_description": "El cuarto de aperos huele a hierro viejo y madera seca. Lo poco que queda aquí fue guardado por utilidad, no por olvido: cuerda, pala pequeña, gancho y una herramienta sin mango que ya solo sirve para contar años.",
+    "repeat_description": "El cuarto de aperos conserva un orden práctico bajo el polvo.",
+    "exits": {
+      "NORTE": {
+        "target": "patio_exterior"
+      }
+    },
+    "objects": [
+      "cuerda",
+      "pala_pequena",
+      "gancho_hierro",
+      "herramienta_sin_mango"
+    ],
+    "context_actions": {
+      "SALIR": "NORTE"
+    },
+    "tags": [
+      "interior",
+      "herramientas"
+    ],
+    "scene": "cuarto_aperos"
+  },
+  {
+    "id": "capilla_ruinas",
+    "zone": "zona_3",
+    "name": "Capilla en ruinas",
+    "aliases": [
+      "capilla"
+    ],
+    "first_description": "La capilla es pequeña y está abierta a la intemperie por varias grietas del techo. El altar conserva un relieve circular y el rosetón, incompleto, deja pasar una luz quebrada que no alcanza a cumplir su forma.",
+    "repeat_description": "La capilla sigue esperando que altar y rosetón vuelvan a decir algo juntos.",
+    "exits": {
+      "NORTE": {
+        "target": "patio_trasero"
+      },
+      "ESTE": {
+        "target": "sacristia",
+        "conditions": [
+          {
+            "type": "flag_true",
+            "name": "sacristy_open"
+          }
+        ],
+        "failure_text": "La puerta hacia la sacristía sigue trabada."
+      }
+    },
+    "objects": [
+      "roseton_capilla",
+      "altar_capilla",
+      "rosario_viejo",
+      "copa_plata"
+    ],
+    "tags": [
+      "interior",
+      "simbolico"
+    ],
+    "scene": "capilla_ruinas"
+  },
+  {
+    "id": "sacristia",
+    "zone": "zona_3",
+    "name": "Sacristía",
+    "aliases": [
+      "sacristia pequeña"
+    ],
+    "first_description": "La sacristía ha permanecido cerrada el tiempo suficiente como para oler a piedra guardada. Una losa cuadrada corta el suelo y, apoyada contra el muro, espera una placa de piedra grabada por manos pacientes.",
+    "repeat_description": "La sacristía sigue reducida a losa, piedra y silencio.",
+    "exits": {
+      "OESTE": {
+        "target": "capilla_ruinas"
+      },
+      "ABAJO": {
+        "target": "entrada_subterraneo",
+        "conditions": [
+          {
+            "type": "flag_true",
+            "name": "cellar_slab_open"
+          }
+        ],
+        "failure_text": "La losa aún tapa el acceso inferior."
+      }
+    },
+    "objects": [
+      "losa_subterraneo",
+      "placa_piedra"
+    ],
+    "context_actions": {
+      "SALIR": "OESTE"
+    },
+    "tags": [
+      "interior",
+      "oculto"
+    ],
+    "scene": "sacristia"
+  },
+  {
+    "id": "cobertizo",
+    "zone": "zona_3",
+    "name": "Cobertizo",
+    "aliases": [
+      "cobertizo de tablas"
+    ],
+    "first_description": "El cobertizo cruje con cada paso. Entre tablas resecas y piezas ya inútiles aún queda una vara metálica apoyada en la pared, como si alguien hubiese pensado volver por ella y no hubiera llegado a tiempo.",
+    "repeat_description": "El cobertizo sigue seco, estrecho y lleno de trabajo interrumpido.",
+    "exits": {
+      "OESTE": {
+        "target": "patio_trasero"
+      },
+      "ESTE": {
+        "target": "invernadero_abandonado"
+      }
+    },
+    "objects": [
+      "cubo_viejo_cobertizo",
+      "vara_metalica"
+    ],
+    "tags": [
+      "interior",
+      "herramientas"
+    ],
+    "scene": "cobertizo"
+  },
+  {
+    "id": "invernadero_abandonado",
+    "zone": "zona_3",
+    "name": "Invernadero abandonado",
+    "aliases": [
+      "invernadero"
+    ],
+    "first_description": "Los cristales del invernadero han perdido la transparencia, pero no la humedad. Los bancales siguen marcados y uno de ellos permanece más frío y removido que los demás. La botella de aceite descansa en una repisa oxidada.",
+    "repeat_description": "El invernadero conserva humedad, bancales hundidos y una quietud pegajosa.",
+    "exits": {
+      "OESTE": {
+        "target": "cobertizo"
+      }
+    },
+    "objects": [
+      "ramas_secas_invernadero",
+      "bancal_frio",
+      "botella_aceite",
+      "medallon_simbolo"
+    ],
+    "tags": [
+      "interior",
+      "preparacion"
+    ],
+    "scene": "invernadero_abandonado"
+  },
+  {
+    "id": "patio_trasero",
+    "zone": "zona_3",
+    "name": "Patio trasero",
+    "aliases": [
+      "patio"
+    ],
+    "first_description": "El patio trasero es menos noble y mucho más sincero que la fachada. Desde aquí la finca se organiza alrededor de puertas útiles: cocina, cobertizo, capilla. La entrada lateral confirma por fin que Salvador no quería que confundieras la fachada con el verdadero camino.",
+    "repeat_description": "El patio trasero sigue siendo el verdadero distribuidor de La Arboleda.",
+    "exits": {
+      "NORTE": {
+        "target": "cocina"
+      },
+      "OESTE": {
+        "target": "valla_rota",
+        "conditions": [
+          {
+            "type": "flag_true",
+            "name": "broken_fence_crossable"
+          }
+        ],
+        "failure_text": "La zanja vuelve inútil el paso mientras no quede bien salvada."
+      },
+      "ESTE": {
+        "target": "cobertizo"
+      },
+      "SUR": {
+        "target": "capilla_ruinas"
+      }
+    },
+    "objects": [],
+    "tags": [
+      "exterior",
+      "hub"
+    ],
+    "scene": "patio_trasero"
+  },
+  {
+    "id": "entrada_subterraneo",
+    "zone": "zona_4",
+    "name": "Entrada al subterráneo",
+    "aliases": [
+      "subterraneo",
+      "escalinata"
+    ],
+    "first_description": "La escalinata corta desciende hacia una oscuridad más densa que la de cualquier cuarto cerrado. El aire se vuelve más frío y mojado, y por delante solo queda piedra, pendiente y la necesidad de una luz que no tiemble.",
+    "repeat_description": "La escalinata baja hacia un pasillo que no conviene tentar a oscuras.",
+    "exits": {
+      "ARRIBA": {
+        "target": "sacristia"
+      },
+      "ESTE": {
+        "target": "pasillo_piedra",
+        "conditions": [
+          {
+            "type": "flag_true",
+            "name": "lamp_lit"
+          }
+        ],
+        "failure_text": "Sin una luz estable solo ves negrura y piedra húmeda."
+      }
+    },
+    "objects": [],
+    "context_actions": {
+      "SALIR": "ARRIBA"
+    },
+    "tags": [
+      "interior",
+      "oscuridad"
+    ],
+    "scene": "entrada_subterraneo"
+  },
+  {
+    "id": "pasillo_piedra",
+    "zone": "zona_4",
+    "name": "Pasillo de piedra",
+    "aliases": [
+      "pasillo"
+    ],
+    "first_description": "El corredor de piedra obliga a bajar la voz aunque estés solo. La humedad corre por los muros y las huellas antiguas del trabajo manual se notan más que cualquier intención ornamental. Algunas marcas en la cantería sugieren conducciones y reparaciones viejas: aquí abajo importaba el agua, no el rito. Todo prepara una lectura menos solemne y más exacta del secreto que has venido siguiendo.",
+    "repeat_description": "El pasillo de piedra devuelve eco, humedad y la sospecha de que todo aquí se construyó para servir al agua.",
+    "exits": {
+      "OESTE": {
+        "target": "entrada_subterraneo"
+      },
+      "ESTE": {
+        "target": "camara_aljibe"
+      }
+    },
+    "objects": [],
+    "tags": [
+      "interior",
+      "transicion"
+    ],
+    "scene": "pasillo_piedra"
+  },
+  {
+    "id": "camara_aljibe",
+    "zone": "zona_4",
+    "name": "Cámara del aljibe",
+    "aliases": [
+      "cámara"
+    ],
+    "first_description": "La cámara se abre en torno a un depósito parcial de agua negra. El paso está roto, pero dos anillas enfrentadas delatan que aquí nunca se contó con saltar. El eco del agua hace que la sala parezca más grande de lo que es.",
+    "repeat_description": "El agua del aljibe y las anillas enfrentadas siguen cortando el paso.",
+    "exits": {
+      "OESTE": {
+        "target": "pasillo_piedra"
+      },
+      "ESTE": {
+        "target": "gruta_sellada",
+        "conditions": [
+          {
+            "type": "flag_true",
+            "name": "aljibe_crossed"
+          }
+        ],
+        "failure_text": "Sin asegurar un paso entre las anillas, el agua sigue cerrandote el camino."
+      }
+    },
+    "objects": [
+      "anillas_aljibe",
+      "agua_aljibe"
+    ],
+    "tags": [
+      "interior",
+      "puzle"
+    ],
+    "scene": "camara_aljibe"
+  },
+  {
+    "id": "gruta_sellada",
+    "zone": "zona_4",
+    "name": "Gruta sellada",
+    "aliases": [
+      "gruta"
+    ],
+    "first_description": "La roca aquí ya no parece natural del todo. Una hendidura vertical espera algo plano y un cuenco de piedra, tallado con calma, sugiere que la última puerta no se abre con fuerza sino con un gesto entendido.",
+    "repeat_description": "La hendidura y el cuenco siguen guardando la gruta.",
+    "exits": {
+      "OESTE": {
+        "target": "camara_aljibe"
+      },
+      "ESTE": {
+        "target": "camara_final",
+        "conditions": [
+          {
+            "type": "flag_true",
+            "name": "grotto_open"
+          }
+        ],
+        "failure_text": "La roca sigue cerrada como si aún faltara una parte del gesto."
+      }
+    },
+    "objects": [
+      "hendidura_piedra",
+      "cuenco_piedra"
+    ],
+    "tags": [
+      "interior",
+      "final"
+    ],
+    "scene": "gruta_sellada"
+  },
+  {
+    "id": "camara_final",
+    "zone": "zona_4",
+    "name": "Cámara final",
+    "aliases": [
+      "cámara",
+      "final"
+    ],
+    "first_description": "La estancia final es sobria hasta la severidad. Un pedestal espera en el centro y, tras el, una caja de documentos cerrada por un mecanismo que no tiene nada de codicioso. Todo aquí fue construido para guardar una memoria, no un botín.",
+    "repeat_description": "El pedestal y la caja de documentos siguen esperando una última decision.",
+    "exits": {
+      "OESTE": {
+        "target": "gruta_sellada"
+      }
+    },
+    "objects": [
+      "pedestal_final"
+    ],
+    "tags": [
+      "interior",
+      "revelacion"
+    ],
+    "scene": "camara_final"
+  }
+]

@@ -1,0 +1,608 @@
+[
+  {
+    "id": "ramas_secas",
+    "name": "ramas secas",
+    "aliases": [
+      "ramas"
+    ],
+    "kind": "ambient",
+    "portable": false,
+    "listed": false,
+    "location": "camino_entrada",
+    "description": "Crujen con solo mirarlas. No tienen más secreto que el abandono del camino."
+  },
+  {
+    "id": "pozo_seco",
+    "name": "pozo seco",
+    "aliases": [
+      "pozo"
+    ],
+    "kind": "fixture",
+    "portable": false,
+    "listed": false,
+    "location": "claro_pozo_seco",
+    "description": "El brocal está gastado y abajo no queda más que piedra, sombra y un olor remoto a humedad."
+  },
+  {
+    "id": "cubo_viejo",
+    "name": "cubo viejo",
+    "aliases": [
+      "cubo"
+    ],
+    "kind": "ambient",
+    "portable": false,
+    "listed": false,
+    "location": "claro_pozo_seco",
+    "description": "El asa está torcida y el fondo ha perdido cualquier voluntad de contener nada."
+  },
+  {
+    "id": "tabla_suelta",
+    "name": "tabla suelta",
+    "aliases": [
+      "tabla"
+    ],
+    "kind": "main",
+    "portable": true,
+    "listed": true,
+    "location": "claro_pozo_seco",
+    "description": "Es una tabla larga y fea, pero aún lo bastante firme como para salvar un paso corto.",
+    "states": {
+      "fixed": false
+    }
+  },
+  {
+    "id": "verja_frontal",
+    "name": "verja frontal",
+    "aliases": [
+      "verja",
+      "reja"
+    ],
+    "kind": "fixture",
+    "portable": false,
+    "listed": false,
+    "location": "sendero_piedras",
+    "description": "La verja no parece oxidada tanto como cansada de decir que no. Entre los barrotes se adivina una tranca interior: esta entrada estaba pensada para abrirse desde dentro."
+  },
+  {
+    "id": "zanja_barro",
+    "name": "zanja",
+    "aliases": [
+      "barro",
+      "zanja de barro"
+    ],
+    "kind": "fixture",
+    "portable": false,
+    "listed": false,
+    "location": "valla_rota",
+    "description": "No es profunda, pero si lo bastante mala como para convertir un paso tonto en una torpeza memorable."
+  },
+  {
+    "id": "puerta_aperos",
+    "name": "puerta de aperos",
+    "aliases": [
+      "puerta",
+      "puerta lateral",
+      "aperos"
+    ],
+    "kind": "fixture",
+    "portable": false,
+    "listed": false,
+    "location": "patio_exterior",
+    "description": "La cerradura está vieja, pero no muerta. Es una puerta de trabajo, no de lucimiento."
+  },
+  {
+    "id": "retrato_danado",
+    "name": "retrato dañado",
+    "aliases": [
+      "retrato",
+      "cuadro"
+    ],
+    "kind": "optional",
+    "portable": false,
+    "listed": true,
+    "location": "vestibulo",
+    "description": "Bajo la suciedad aún se distingue a una mujer junto a un árbol oscuro. No parece un retrato de lucimiento, sino de alguien que quiso dejar constancia de un emblema y de una responsabilidad. En el borde inferior sobrevive un motivo repetido: una copa entre ramas.",
+    "on_examine_effects": [
+      {
+        "type": "set_flag",
+        "name": "portrait_clue_found",
+        "value": true
+      }
+    ]
+  },
+  {
+    "id": "reloj_parado",
+    "name": "reloj parado",
+    "aliases": [
+      "reloj"
+    ],
+    "kind": "ambient",
+    "portable": false,
+    "listed": false,
+    "location": "salon_principal",
+    "description": "Las agujas se rindieron hace años. Aquí el tiempo no paso: simplemente se detuvo."
+  },
+  {
+    "id": "copa_rota",
+    "name": "copa rota",
+    "aliases": [
+      "rota"
+    ],
+    "kind": "ambient",
+    "portable": false,
+    "listed": false,
+    "location": "salon_principal",
+    "description": "Un borde astillado basta para recordar que la copa que buscas no es esta."
+  },
+  {
+    "id": "cuchara_vieja",
+    "name": "cuchara vieja",
+    "aliases": [
+      "cuchara"
+    ],
+    "kind": "ambient",
+    "portable": false,
+    "listed": false,
+    "location": "comedor",
+    "description": "La plata se ha oscurecido hasta volverse casi gris."
+  },
+  {
+    "id": "cajon_roto",
+    "name": "cajón roto",
+    "aliases": [
+      "cajón"
+    ],
+    "kind": "ambient",
+    "portable": false,
+    "listed": false,
+    "location": "cocina",
+    "description": "Ni siquiera encaja ya en su hueco. Solo deja claro que la cocina siguio en uso cuando el resto de la casa ya había renunciado."
+  },
+  {
+    "id": "caja_cerillas",
+    "name": "caja de cerillas",
+    "aliases": [
+      "cerillas",
+      "caja"
+    ],
+    "kind": "main",
+    "portable": true,
+    "listed": true,
+    "location": "cocina",
+    "description": "La caja está algo húmeda, pero todavía suena con la promesa de unas pocas cerillas útiles."
+  },
+  {
+    "id": "llave_oxidada",
+    "name": "llave oxidada",
+    "aliases": [
+      "llave"
+    ],
+    "kind": "main",
+    "portable": true,
+    "listed": true,
+    "location": "cocina",
+    "description": "Pequeña, dura y gastada. Sigue pareciendo una llave de uso, no de adorno."
+  },
+  {
+    "id": "falso_fondo",
+    "name": "falso fondo",
+    "aliases": [
+      "fondo",
+      "fondo falso",
+      "anaquel"
+    ],
+    "kind": "fixture",
+    "portable": false,
+    "listed": false,
+    "location": "despensa",
+    "description": "Una tabla interior cede un poco al tacto. Alguien escondió algo pequeño aquí con más costumbre que talento."
+  },
+  {
+    "id": "nota_encerada",
+    "name": "nota encerada",
+    "aliases": [
+      "nota",
+      "papel"
+    ],
+    "kind": "optional",
+    "portable": true,
+    "listed": true,
+    "location": "despensa",
+    "visible": false,
+    "description": "Un papel protegido con cera para sobrevivir a la humedad.",
+    "read_text": "La nota solo dice: \"El aceite duerme donde el vidrio suda. Del anillo a la argolla, sin prisa.\" Parece más una ayuda dejada para alguien concreto que una instrucción general.",
+    "on_read_effects": [
+      {
+        "type": "set_flag",
+        "name": "pantry_hint_found",
+        "value": true
+      }
+    ]
+  },
+  {
+    "id": "libro_humedo",
+    "name": "libro húmedo",
+    "aliases": [
+      "libro"
+    ],
+    "kind": "ambient",
+    "portable": false,
+    "listed": false,
+    "location": "biblioteca",
+    "description": "Las páginas se pegan unas con otras. Aún así, el libro parece haber muerto de paciencia y no de abandono."
+  },
+  {
+    "id": "legajos_finca",
+    "name": "legajos de la finca",
+    "aliases": [
+      "legajos",
+      "documentos"
+    ],
+    "kind": "optional",
+    "portable": false,
+    "listed": false,
+    "location": "biblioteca",
+    "description": "Papeles administrativos, notas de cultivos y una referencia repetida al árbol con copa como antiguo sello menor de la finca.",
+    "read_text": "Entre cuentas y nombres aparece una nota firmada por Adela de Montalban y un apunte posterior atribuido a Inocencio Llorente. Ambos hablan del agua, del huerto bajo y de una promesa que no debía pasar a manos codiciosas.",
+    "on_read_effects": [
+      {
+        "type": "set_flag",
+        "name": "library_history_found",
+        "value": true
+      }
+    ]
+  },
+  {
+    "id": "trozo_vidriera",
+    "name": "trozo de vidriera",
+    "aliases": [
+      "vidriera",
+      "trozo"
+    ],
+    "kind": "main",
+    "portable": true,
+    "listed": true,
+    "location": "biblioteca",
+    "description": "El color y la curva del borde no dejan muchas dudas: perteneció a una ventana religiosa.",
+    "states": {
+      "fixed": false
+    }
+  },
+  {
+    "id": "lampara_aceite",
+    "name": "lámpara de aceite",
+    "aliases": [
+      "lámpara"
+    ],
+    "kind": "main",
+    "portable": true,
+    "listed": true,
+    "location": "dormitorio_familiar",
+    "description": "Una lámpara portatil vieja. Esta limpia, pero al moverla notas enseguida que no tiene aceite.",
+    "states": {
+      "filled": false,
+      "lit": false
+    }
+  },
+  {
+    "id": "cuaderno_familiar",
+    "name": "cuaderno del familiar",
+    "aliases": [
+      "cuaderno",
+      "notas"
+    ],
+    "kind": "main",
+    "portable": true,
+    "listed": true,
+    "location": "dormitorio_familiar",
+    "description": "Las notas de Salvador mezclan observaciones prácticas con frases insistentes. Varias páginas repiten la misma idea: no la busques en la casa. No suena a acertijo brillante, sino a advertencia escrita con poco tiempo y ninguna gana de adornarse.",
+    "read_text": "Las páginas útiles repiten cuatro apuntes: \"No la busques en la casa. Allí solo quedan las claves.\" \"La copa guarda el camino.\" \"El vidrio devuelve lo que falta.\" \"Del anillo a la argolla, que el agua no perdona.\""
+  },
+  {
+    "id": "cajon_oculto",
+    "name": "cajón oculto",
+    "aliases": [
+      "cajón",
+      "mueble"
+    ],
+    "kind": "fixture",
+    "portable": false,
+    "listed": false,
+    "location": "dormitorio_familiar",
+    "description": "El cajón no abre bien. Algo por dentro se quedo torcido o hinchado, y meter los dedos no basta. Con una palanca corta y fina deberia acabar cediendo."
+  },
+  {
+    "id": "carta_salvador",
+    "name": "carta de Salvador",
+    "aliases": [
+      "carta"
+    ],
+    "kind": "optional",
+    "portable": true,
+    "listed": true,
+    "location": "dormitorio_familiar",
+    "visible": false,
+    "description": "Una carta doblada con cuidado, escondida donde solo entraría la mano de quien se moleste en insistir.",
+    "read_text": "La letra es breve: \"Si has llegado hasta aquí, ya sabes que no quería dejar esto al primero que viniera por plata. Te lo dejó a ti porque escuchabas cuando los demás sonreían y porque no mirabas esta finca como un estorbo. Si entiendes el lugar, sabrás qué hacer con él.\"",
+    "on_read_effects": [
+      {
+        "type": "set_flag",
+        "name": "bedroom_letter_found",
+        "value": true
+      }
+    ]
+  },
+  {
+    "id": "cuerda",
+    "name": "cuerda",
+    "aliases": [
+      "soga"
+    ],
+    "kind": "main",
+    "portable": true,
+    "listed": true,
+    "location": "cuarto_aperos",
+    "description": "Esta seca y fuerte. Aún puede aguantar un peso serio si se fija bien."
+  },
+  {
+    "id": "pala_pequena",
+    "name": "pala pequeña",
+    "aliases": [
+      "pala"
+    ],
+    "kind": "main",
+    "portable": true,
+    "listed": true,
+    "location": "cuarto_aperos",
+    "description": "Es una pala de jardín, manejable y bastante mejor conservada que el resto de lo que hay aquí."
+  },
+  {
+    "id": "gancho_hierro",
+    "name": "gancho de hierro",
+    "aliases": [
+      "gancho"
+    ],
+    "kind": "main",
+    "portable": true,
+    "listed": true,
+    "location": "cuarto_aperos",
+    "description": "Pesa más de lo que parecía. Sirve para agarrar o asegurar algo a distancia corta."
+  },
+  {
+    "id": "herramienta_sin_mango",
+    "name": "herramienta sin mango",
+    "aliases": [
+      "herramienta"
+    ],
+    "kind": "ambient",
+    "portable": false,
+    "listed": false,
+    "location": "cuarto_aperos",
+    "description": "Lo bastante gastada como para haber dejado de ser útil hace tiempo."
+  },
+  {
+    "id": "roseton_capilla",
+    "name": "rosetón",
+    "aliases": [
+      "rosetón",
+      "ventana"
+    ],
+    "kind": "fixture",
+    "portable": false,
+    "listed": false,
+    "location": "capilla_ruinas",
+    "description": "Le falta una pieza para cerrar su dibujo. Tal como esta, la luz entra pero no termina de decir nada."
+  },
+  {
+    "id": "altar_capilla",
+    "name": "altar",
+    "aliases": [
+      "altar",
+      "relieve"
+    ],
+    "kind": "fixture",
+    "portable": false,
+    "listed": false,
+    "location": "capilla_ruinas",
+    "description": "En el centro del altar queda un hueco circular demasiado deliberado para ser mero adorno."
+  },
+  {
+    "id": "rosario_viejo",
+    "name": "rosario",
+    "aliases": [
+      "rosario"
+    ],
+    "kind": "ambient",
+    "portable": false,
+    "listed": false,
+    "location": "capilla_ruinas",
+    "description": "Las cuentas estan frías y oscurecidas. Nadie las toca desde hace años."
+  },
+  {
+    "id": "copa_plata",
+    "name": "copa de plata",
+    "aliases": [
+      "copa"
+    ],
+    "kind": "main",
+    "portable": true,
+    "listed": true,
+    "location": "capilla_ruinas",
+    "visible": false,
+    "description": "La plata está gastada, pero el grabado del árbol sigue firme. Más que valiosa, parece exacta.",
+    "states": {
+      "filled": false
+    }
+  },
+  {
+    "id": "losa_subterraneo",
+    "name": "losa",
+    "aliases": [
+      "losa",
+      "suelo"
+    ],
+    "kind": "fixture",
+    "portable": false,
+    "listed": false,
+    "location": "sacristia",
+    "description": "La piedra encaja demasiado bien como para abrirse con las manos desnudas."
+  },
+  {
+    "id": "placa_piedra",
+    "name": "placa de piedra grabada",
+    "aliases": [
+      "placa",
+      "piedra"
+    ],
+    "kind": "main",
+    "portable": true,
+    "listed": true,
+    "location": "sacristia",
+    "description": "La superficie está erosionada, pero la hendidura del borde y la talla central indican que no es solo una inscripción.",
+    "read_text": "La talla aún se deja leer: \"Devuelve lo prestado al agua y el paso recordará.\"",
+    "states": {
+      "inserted": false
+    }
+  },
+  {
+    "id": "cubo_viejo_cobertizo",
+    "name": "cubo viejo",
+    "aliases": [
+      "cubo"
+    ],
+    "kind": "ambient",
+    "portable": false,
+    "listed": false,
+    "location": "cobertizo",
+    "description": "Otro cubo rendido por los años. Aquí ya nada espera agua."
+  },
+  {
+    "id": "vara_metalica",
+    "name": "vara metálica",
+    "aliases": [
+      "vara",
+      "barra"
+    ],
+    "kind": "main",
+    "portable": true,
+    "listed": true,
+    "location": "cobertizo",
+    "description": "Una barra de hierro simple, perfecta para hacer palanca cuando la fuerza de las manos no basta."
+  },
+  {
+    "id": "ramas_secas_invernadero",
+    "name": "ramas secas",
+    "aliases": [
+      "ramas"
+    ],
+    "kind": "ambient",
+    "portable": false,
+    "listed": false,
+    "location": "invernadero_abandonado",
+    "description": "Las ramas se han quedado donde murieron, sujetas por una humedad que ya no alimenta nada."
+  },
+  {
+    "id": "bancal_frio",
+    "name": "bancal frío",
+    "aliases": [
+      "bancal",
+      "tierra"
+    ],
+    "kind": "fixture",
+    "portable": false,
+    "listed": false,
+    "location": "invernadero_abandonado",
+    "description": "La tierra está removida de una forma demasiado discreta para ser natural."
+  },
+  {
+    "id": "botella_aceite",
+    "name": "botella de aceite",
+    "aliases": [
+      "botella",
+      "aceite"
+    ],
+    "kind": "main",
+    "portable": true,
+    "listed": true,
+    "location": "invernadero_abandonado",
+    "description": "Queda suficiente aceite para una lámpara vieja y nada más."
+  },
+  {
+    "id": "medallon_simbolo",
+    "name": "medallon con simbolo",
+    "aliases": [
+      "medallon"
+    ],
+    "kind": "main",
+    "portable": true,
+    "listed": true,
+    "location": "invernadero_abandonado",
+    "visible": false,
+    "description": "El relieve de copa entre ramas coincide demasiado con el altar como para ser casual."
+  },
+  {
+    "id": "anillas_aljibe",
+    "name": "anillas",
+    "aliases": [
+      "anilla",
+      "anillas",
+      "argolla",
+      "argollas"
+    ],
+    "kind": "fixture",
+    "portable": false,
+    "listed": false,
+    "location": "camara_aljibe",
+    "description": "Una está a este lado del agua y otra enfrente. No las pusieron ahí para decorar, sino para tender un paso seguro cuando cruzar a pulso dejaba de ser razonable."
+  },
+  {
+    "id": "agua_aljibe",
+    "name": "agua del aljibe",
+    "aliases": [
+      "agua",
+      "aljibe"
+    ],
+    "kind": "fixture",
+    "portable": false,
+    "listed": false,
+    "location": "camara_aljibe",
+    "description": "El agua está quieta, oscura y más limpia de lo que parecía desde lejos."
+  },
+  {
+    "id": "hendidura_piedra",
+    "name": "hendidura",
+    "aliases": [
+      "hendidura",
+      "ranura"
+    ],
+    "kind": "fixture",
+    "portable": false,
+    "listed": false,
+    "location": "gruta_sellada",
+    "description": "Tiene la medida de algo plano y pesado, tallado para encajar y no para ser forzado."
+  },
+  {
+    "id": "cuenco_piedra",
+    "name": "cuenco de piedra",
+    "aliases": [
+      "cuenco"
+    ],
+    "kind": "fixture",
+    "portable": false,
+    "listed": false,
+    "location": "gruta_sellada",
+    "description": "No es un recipiente improvisado. Tiene la solemnidad exacta de un gesto repetido pocas veces."
+  },
+  {
+    "id": "pedestal_final",
+    "name": "pedestal",
+    "aliases": [
+      "pedestal"
+    ],
+    "kind": "fixture",
+    "portable": false,
+    "listed": false,
+    "location": "camara_final",
+    "description": "La base tiene la forma precisa de la copa. No parece reclamar una ofrenda, sino una devolucion."
+  }
+]
