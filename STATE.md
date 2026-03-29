@@ -8,7 +8,7 @@ Fecha de referencia: 29-03-2026
 
 ## Estado actual
 
-Repositorio con build base jugable y corpus documental corregido para volver a ser coherente con el enfoque spec-driven.
+Repositorio con build jugable, corpus documental coherente y cierre funcional suficiente para considerarlo una `v0.1.0`.
 
 ## Ya decidido
 
@@ -32,6 +32,7 @@ Repositorio con build base jugable y corpus documental corregido para volver a s
 - validacion de contenido reforzada para detectar referencias rotas y colisiones locales
 - pistas narrativas afinadas para que la casa guarde claves, no una falsa solucion
 - pulido inicial de textos en la apertura, tramo domestico y pasillo final
+- pulido selectivo de tono en biblioteca, dormitorio, capilla, aljibe y camara final
 - persistencia endurecida frente a saves incompletos o corruptos
 - cobertura automatica ampliada para parser, contenido, persistencia y flujo contextual
 
@@ -53,11 +54,11 @@ Repositorio con build base jugable y corpus documental corregido para volver a s
 - manual breve de jugador en raiz para orientar la experiencia sin invadir la interfaz
 - guardado y carga en JSON
 - finales principal y variante
-- 39 pruebas automatizadas base y de regresion
+- 44 pruebas automatizadas base y de regresion
 
 ## Pendiente
 
-- pulido fino del resto de textos y respuestas
+- pulido fino del resto de textos y respuestas secundarios
 - decidir si se quiere ampliar todavia mas la cobertura de escenas a otras habitaciones
 - pasada manual de ritmo y justicia de puzles
 - validacion mas estricta de aliases globales si el contenido crece
@@ -79,4 +80,4 @@ Siguiente foco razonable:
 - pulido narrativo y de respuestas
 - ampliacion de pruebas del parser y del flujo opcional
 - revision manual completa del ritmo de apertura y del backtracking medio
-- decidir si se quiere cerrar una V1 estable o abrir una fase de herramientas de autor
+- decidir si tras `v0.1.0` se quiere abrir una fase de herramientas de autor o mantener solo pulido incremental

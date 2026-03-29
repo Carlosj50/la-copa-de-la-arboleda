@@ -210,7 +210,7 @@
     "location": "despensa",
     "visible": false,
     "description": "Un papel protegido con cera para sobrevivir a la humedad.",
-    "read_text": "La nota solo dice: \"El aceite duerme donde el vidrio suda. Del anillo a la argolla, sin prisa.\" Parece más una ayuda dejada para alguien concreto que una instrucción general.",
+    "read_text": "La nota solo dice: \"El aceite duerme donde el vidrio suda. Del anillo a la argolla, sin prisa.\" Está escrita para alguien que ya conocía la finca y solo necesitaba una corrección, no un mapa.",
     "on_read_effects": [
       {
         "type": "set_flag",
@@ -295,8 +295,8 @@
     "portable": true,
     "listed": true,
     "location": "dormitorio_familiar",
-    "description": "Las notas de Salvador mezclan observaciones prácticas con frases insistentes. Varias páginas repiten la misma idea: no la busques en la casa. No suena a acertijo brillante, sino a advertencia escrita con poco tiempo y ninguna gana de adornarse.",
-    "read_text": "Las páginas útiles repiten cuatro apuntes: \"No la busques en la casa. Allí solo quedan las claves.\" \"La copa guarda el camino.\" \"El vidrio devuelve lo que falta.\" \"Del anillo a la argolla, que el agua no perdona.\""
+    "description": "Las notas de Salvador mezclan observaciones prácticas con frases insistentes. Varias páginas repiten la misma idea: no la busques en la casa. No suena a acertijo brillante, sino a una advertencia escrita con poco tiempo y ninguna gana de adornarse.",
+    "read_text": "Las páginas útiles repiten cuatro apuntes: \"No la busques en la casa. Allí solo quedan las claves.\" \"La copa guarda el camino.\" \"El vidrio devuelve lo que falta.\" \"Del anillo a la argolla, que el agua no perdona el apuro.\""
   },
   {
     "id": "cajon_oculto",
@@ -322,8 +322,8 @@
     "listed": true,
     "location": "dormitorio_familiar",
     "visible": false,
-    "description": "Una carta doblada con cuidado, escondida donde solo entraría la mano de quien se moleste en insistir.",
-    "read_text": "La letra es breve: \"Si has llegado hasta aquí, ya sabes que no quería dejar esto al primero que viniera por plata. Te lo dejó a ti porque escuchabas cuando los demás sonreían y porque no mirabas esta finca como un estorbo. Si entiendes el lugar, sabrás qué hacer con él.\"",
+    "description": "Una carta doblada con cuidado, escondida donde solo entraría la mano de quien decida insistir de verdad.",
+    "read_text": "La letra es breve: \"Si has llegado hasta aquí, ya sabes que no quería dejar esto al primero que viniera por plata. Te lo dejo a ti porque escuchabas cuando los demás sonreían y porque nunca miraste esta finca como un estorbo. Si entiendes el lugar, sabrás qué hacer con él. Si no, déjalo donde ha sabido esperar.\"",
     "on_read_effects": [
       {
         "type": "set_flag",
@@ -429,7 +429,7 @@
     "listed": true,
     "location": "capilla_ruinas",
     "visible": false,
-    "description": "La plata está gastada, pero el grabado del árbol sigue firme. Más que valiosa, parece exacta.",
+    "description": "La plata está gastada, pero el grabado del árbol sigue firme. Más que valiosa, parece precisa.",
     "states": {
       "filled": false
     }
@@ -458,7 +458,7 @@
     "portable": true,
     "listed": true,
     "location": "sacristia",
-    "description": "La superficie está erosionada, pero la hendidura del borde y la talla central indican que no es solo una inscripción.",
+    "description": "La superficie está erosionada, pero la hendidura del borde y la talla central indican que no es solo una inscripción: es una pieza hecha para encajar.",
     "read_text": "La talla aún se deja leer: \"Devuelve lo prestado al agua y el paso recordará.\"",
     "states": {
       "inserted": false
@@ -538,7 +538,7 @@
     "listed": true,
     "location": "invernadero_abandonado",
     "visible": false,
-    "description": "El relieve de copa entre ramas coincide demasiado con el altar como para ser casual."
+    "description": "El relieve de copa entre ramas coincide demasiado con el altar y su hueco circular como para ser casual."
   },
   {
     "id": "anillas_aljibe",

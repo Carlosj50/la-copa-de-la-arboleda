@@ -351,8 +351,8 @@
     "aliases": [
       "libros"
     ],
-    "first_description": "La biblioteca se ha reblandecido por la humedad, pero todavía conserva un orden terco. Entre los estantes y la mesa de lectura sobreviven legajos de la finca y un fragmento de vidriera envuelto en tela oscura. No parece un cuarto de estudio brillante, sino un sitio donde insistir en silencio hasta que una nota o un nombre encajen.",
-    "repeat_description": "La biblioteca sigue oliendo a papel mojado, nombres viejos y paciencia.",
+    "first_description": "La biblioteca se ha reblandecido por la humedad, pero todavía conserva un orden terco. Entre los estantes y la mesa de lectura sobreviven legajos de la finca y un fragmento de vidriera envuelto en tela oscura. No parece un cuarto de estudio brillante, sino un sitio donde insistir en silencio hasta que un apellido, una fecha o una nota terminen por encajar.",
+    "repeat_description": "La biblioteca sigue oliendo a papel mojado, nombres viejos y paciencia obstinada.",
     "exits": {
       "OESTE": {
         "target": "vestibulo"
@@ -380,8 +380,8 @@
       "dormitorio",
       "cuarto"
     ],
-    "first_description": "El dormitorio de Salvador es sobrio y reciente en comparación con el resto de la casa. Aquí hay menos abandono que agotamiento: una lámpara, un cuaderno de notas y un mueble cuyo cajón no termina de encajar. Por primera vez desde que llegaste, la finca parece menos un escenario y más la suma de una vida concreta, cansada y todavía atenta.",
-    "repeat_description": "El dormitorio de Salvador sigue pareciendo habitado por una ausencia cercana y muy poco teatral.",
+    "first_description": "El dormitorio de Salvador es sobrio y reciente en comparación con el resto de la casa. Aquí hay menos abandono que agotamiento: una lámpara, un cuaderno de notas y un mueble cuyo cajón no termina de encajar. Por primera vez desde que llegaste, la finca deja de parecer un escenario y empieza a parecer la suma de una vida concreta, cansada y todavía atenta.",
+    "repeat_description": "El dormitorio de Salvador sigue pareciendo habitado por una ausencia reciente y muy poco teatral.",
     "exits": {
       "SUR": {
         "target": "biblioteca"
@@ -438,8 +438,8 @@
     "aliases": [
       "capilla"
     ],
-    "first_description": "La capilla es pequeña y está abierta a la intemperie por varias grietas del techo. El altar conserva un relieve circular y el rosetón, incompleto, deja pasar una luz quebrada que no alcanza a cumplir su forma.",
-    "repeat_description": "La capilla sigue esperando que altar y rosetón vuelvan a decir algo juntos.",
+    "first_description": "La capilla es pequeña y está abierta a la intemperie por varias grietas del techo. El altar conserva un relieve circular y el rosetón, incompleto, deja pasar una luz rota que no alcanza a cerrar su dibujo.",
+    "repeat_description": "La capilla sigue esperando que altar y rosetón vuelvan a completar la misma frase.",
     "exits": {
       "NORTE": {
         "target": "patio_trasero"
@@ -660,8 +660,8 @@
     "aliases": [
       "cámara"
     ],
-    "first_description": "La cámara se abre en torno a un depósito parcial de agua negra. El paso está roto, pero dos anillas enfrentadas delatan que aquí nunca se contó con saltar. El eco del agua hace que la sala parezca más grande de lo que es.",
-    "repeat_description": "El agua del aljibe y las anillas enfrentadas siguen cortando el paso.",
+    "first_description": "La cámara se abre en torno a un depósito parcial de agua negra. El paso está roto, pero dos anillas enfrentadas, una a cada lado, delatan que aquí nunca se contó con saltar. El eco del agua agranda la sala y le da una paciencia incómoda.",
+    "repeat_description": "El agua del aljibe y las anillas enfrentadas siguen proponiendo un cruce que no admite improvisaciones.",
     "exits": {
       "OESTE": {
         "target": "pasillo_piedra"
@@ -729,8 +729,8 @@
       "cámara",
       "final"
     ],
-    "first_description": "La estancia final es sobria hasta la severidad. Un pedestal espera en el centro y, tras el, una caja de documentos cerrada por un mecanismo que no tiene nada de codicioso. Todo aquí fue construido para guardar una memoria, no un botín.",
-    "repeat_description": "El pedestal y la caja de documentos siguen esperando una última decision.",
+    "first_description": "La estancia final es sobria hasta la severidad. Un pedestal espera en el centro y, tras él, una caja de documentos cerrada por un mecanismo que no tiene nada de codicioso. Todo aquí fue construido para guardar una memoria, no para tentar a nadie.",
+    "repeat_description": "El pedestal y la caja de documentos siguen esperando una última decisión.",
     "exits": {
       "OESTE": {
         "target": "gruta_sellada"
