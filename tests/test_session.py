@@ -85,6 +85,40 @@ class SessionTests(unittest.TestCase):
             self.assertIn("[ RESULTADO ]", response)
             self.assertIn("Por ahí no puedes pasar.", response)
 
+    def test_usar_sin_objeto_da_mensaje_claro(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            session = build_session(tmp_dir)
+            response = session.execute("usar")
+            self.assertEqual(response, "No queda claro qué quieres usar.")
+
+    def test_usar_sin_objeto_indirecto_pide_mas_precision(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            session = build_session(tmp_dir)
+            response = session.execute("usar llave")
+            self.assertEqual(response, "Te falta concretar dónde o en qué quieres usar eso.")
+
+    def test_abrir_sin_objeto_da_mensaje_claro(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            session = build_session(tmp_dir)
+            response = session.execute("abrir")
+            self.assertEqual(response, "No queda claro qué quieres abrir.")
+
+    def test_cerrar_objeto_no_cerrable_da_mensaje_especifico(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            session = build_session(tmp_dir)
+            session.execute("este")
+            session.execute("norte")
+            response = session.execute("cerrar pozo")
+            self.assertEqual(response, "Eso no parece algo que puedas cerrar.")
+
+    def test_empujar_objeto_sin_uso_da_mensaje_especifico(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            session = build_session(tmp_dir)
+            session.execute("este")
+            session.execute("norte")
+            response = session.execute("empujar pozo")
+            self.assertEqual(response, "Empujarlo no cambia nada.")
+
     def test_intro_text_includes_pixel_splash_and_room_name(self) -> None:
         with tempfile.TemporaryDirectory() as tmp_dir:
             session = build_session(tmp_dir)

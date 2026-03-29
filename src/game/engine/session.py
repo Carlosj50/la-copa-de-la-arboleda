@@ -388,6 +388,10 @@ class GameSession:
         return "Apagas la lámpara."
 
     def _run_interaction(self, command: ParsedCommand) -> str:
+        missing_target_message = self._missing_interaction_target_message(command)
+        if missing_target_message:
+            return missing_target_message
+
         direct_id = None
         indirect_id = None
 
@@ -412,7 +416,7 @@ class GameSession:
             swapped = interaction is not None
 
         if interaction is None:
-            return "Ahora mismo eso no sirve."
+            return self._unsupported_interaction_message(command, direct_id, indirect_id)
 
         if not self._conditions_met(interaction.conditions):
             return interaction.failure_text or "Así no consigues nada."
@@ -425,6 +429,41 @@ class GameSession:
         if swapped:
             return "Funciona, aunque el gesto no era exactamente ese."
         return "Hecho."
+
+    def _missing_interaction_target_message(self, command: ParsedCommand) -> str | None:
+        if command.action == "USAR":
+            if command.direct_text is None:
+                return "No queda claro qué quieres usar."
+            if command.indirect_text is None:
+                return "Te falta concretar dónde o en qué quieres usar eso."
+
+        missing_messages = {
+            "ABRIR": "No queda claro qué quieres abrir.",
+            "CERRAR": "No queda claro qué quieres cerrar.",
+            "EMPUJAR": "No queda claro qué quieres empujar.",
+            "TIRAR": "No queda claro de qué quieres tirar.",
+        }
+        if command.direct_text is None:
+            return missing_messages.get(command.action)
+        return None
+
+    def _unsupported_interaction_message(
+        self,
+        command: ParsedCommand,
+        direct_id: str | None,
+        indirect_id: str | None,
+    ) -> str:
+        if command.action == "ABRIR" and direct_id:
+            return "Eso no parece algo que puedas abrir."
+        if command.action == "CERRAR" and direct_id:
+            return "Eso no parece algo que puedas cerrar."
+        if command.action == "EMPUJAR" and direct_id:
+            return "Empujarlo no cambia nada."
+        if command.action == "TIRAR" and direct_id:
+            return "Tirar de eso no provoca nada."
+        if command.action == "USAR" and direct_id and indirect_id:
+            return "Así no consigues nada."
+        return "Ahora mismo eso no sirve."
 
     def _find_interaction(
         self,
