@@ -20,7 +20,7 @@
 
 <p align="center">
   <img src="docs/assets/screenshots/03-capilla-ruinas.svg" alt="Capilla en ruinas" width="48%">
-  <img src="docs/assets/screenshots/04-camara-aljibe.svg" alt="Camara del aljibe" width="48%">
+  <img src="docs/assets/screenshots/04-camara-aljibe.svg" alt="Cámara del aljibe" width="48%">
 </p>
 
 ## Premisa
