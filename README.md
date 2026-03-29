@@ -1,7 +1,7 @@
 # La Copa de la Arboleda
 
 <p align="center">
-  Aventura conversacional retro para consola, escrita en Python, con parser controlado, exploracion pausada y misterio rural.
+  Aventura conversacional retro para consola, escrita en Python, con parser controlado, exploración pausada y misterio rural.
 </p>
 
 <p align="center">
@@ -25,25 +25,25 @@
 
 ## Premisa
 
-Tras la muerte de un familiar solitario, el protagonista recibe una carpeta con notas incompletas, un croquis torpe y una frase repetida hasta la obsesion:
+Tras la muerte de un familiar solitario, el protagonista recibe una carpeta con notas incompletas, un croquis torpe y una frase repetida hasta la obsesión:
 
 > "No la busques en la casa. La copa guarda el camino."
 
-Lo que empieza como la busqueda de una copa de plata acaba convirtiendose en una exploracion de la finca de La Arboleda, sus anexos olvidados y una zona subterranea sellada durante decadas.
+Lo que empieza como la búsqueda de una copa de plata acaba convirtiéndose en una exploración de la finca de La Arboleda, sus anexos olvidados y una zona subterránea sellada durante décadas.
 
-## Que ofrece el proyecto
+## Qué ofrece el proyecto
 
-- aventura conversacional original con tono de misterio, melancolia y tension suave
-- motor modular en Python 3.12, sin framework grafico ni app web
+- aventura conversacional original con tono de misterio, melancolía y tensión suave
+- motor modular en Python 3.12, sin framework gráfico ni app web
 - parser V1 corto, claro y deliberadamente acotado
-- 24 habitaciones, 4 zonas y progresion completa definida desde el inicio
+- 24 habitaciones, 4 zonas y progresión completa definida desde el inicio
 - contenido authored en JSON, separado del runtime
-- una sola pantalla limpia por interaccion, con escenas pixeladas austeras dentro de la consola
+- una sola pantalla limpia por interacción, con escenas pixeladas austeras dentro de la consola
 - guardado y carga de partida en local
 
-## Filosofia de diseno
+## Filosofía de diseño
 
-La experiencia esta pensada para:
+La experiencia está pensada para:
 
 - explorar con calma
 - observar antes de actuar
@@ -55,19 +55,19 @@ No busca:
 
 - parser de lenguaje libre
 - ayudas invasivas
-- mapa automatico
-- motor grafico
+- mapa automático
+- motor gráfico
 - interfaz moderna tipo visual novel
 
 ## Estado actual
 
-El repositorio contiene una version base jugable de principio a fin con:
+El repositorio contiene una versión base jugable de principio a fin con:
 
 - parser, inventario, flags, interacciones y persistencia
 - mundo completo cargado desde datos
 - finales principal y variante
 - pruebas automatizadas con `unittest`
-- documentacion de diseno y de arquitectura
+- documentación de diseño y de arquitectura
 
 ## Puesta en marcha
 
@@ -88,7 +88,7 @@ Ejecutar el juego:
 python -m game
 ```
 
-Tambien puedes usar el lanzador:
+También puedes usar el lanzador:
 
 - `JUGAR_LA_COPA.bat`
 
@@ -100,7 +100,7 @@ cmd.exe /c py -3.12 -m venv G:\\juegopcaventuraconversacional\\.venv
 /mnt/g/juegopcaventuraconversacional/.venv/Scripts/python.exe -m game
 ```
 
-## Comandos utiles
+## Comandos útiles
 
 - `MIRAR`, `MIRA`, `VER`
 - `EXAMINAR OBJETO`
@@ -110,16 +110,16 @@ cmd.exe /c py -3.12 -m venv G:\\juegopcaventuraconversacional\\.venv
 - `LEER`, `ABRIR`, `EMPUJAR`, `TIRAR`
 - `INVENTARIO`, `AYUDA`, `GUARDAR`, `CARGAR`, `FIN`
 
-La ayuda completa para jugar esta en:
+La ayuda completa para jugar está en:
 
 - `MANUAL_JUGADOR.md`
 
-## Documentacion del proyecto
+## Documentación del proyecto
 
 - `MANUAL_JUGADOR.md`: manual breve para jugar
-- `STATE.md`: fotografia operativa del repositorio
-- `docs/`: especificacion de diseno, narrativa y arquitectura
-- `docs/RUNBOOK.md`: preparacion de entorno, ejecucion y reglas de trabajo
+- `STATE.md`: fotografía operativa del repositorio
+- `docs/`: especificación de diseño, narrativa y arquitectura
+- `docs/RUNBOOK.md`: preparación de entorno, ejecución y reglas de trabajo
 
 ## Desarrollo
 
@@ -154,12 +154,12 @@ python scripts/generate_readme_assets.py
 └── STATE.md
 ```
 
-## Principios tecnicos
+## Principios técnicos
 
 - Python simple antes que complejidad gratuita
-- biblioteca estandar primero
+- biblioteca estándar primero
 - contenido separado del motor
-- cambios pequenos y trazables
+- cambios pequeños y trazables
 - arquitectura mantenible antes que "brillante"
 
 ## Nota sobre las capturas
